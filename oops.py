@@ -119,10 +119,12 @@ class Animal(ABC):
     def make_sound(self):
         pass
 
+# Dog is a concreate class of Animal, so it has to implement the abstractmethod make_sound
 class Dog(Animal):
     def make_sound(self):
         print("Bark")
 
+# Cat is a concreate class of Animal, so it has to implement the abstractmethod make_sound
 class Cat(Animal):
     def make_sound(self):
         print("Meow")
