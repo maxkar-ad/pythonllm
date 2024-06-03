@@ -1,6 +1,6 @@
 # capitalize()
 my_str = "hello world"
-print("capitalize:", my_str.capitalize())  # Output: Hello world
+print("capitalize:", my_str.capitalize())  # Output: HELLO WORLD
 
 # casefold()
 my_str = "HELLO WORLD"
