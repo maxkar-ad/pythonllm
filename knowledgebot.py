@@ -68,5 +68,39 @@ if query:
                 for source in sources_list:
                     st.write(source)
 
+#################################################################
+"""
+This Python code implements a "RockyBot: News Research Tool" using Streamlit  for a user interface. Here's a breakdown of what the code does:
 
+1. Imports and Setup:
+
+Imports necessary libraries like streamlit, langchain, pickle, and OpenAI.
+Loads environment variables (likely including an OpenAI API key) using dotenv.
+Sets the Streamlit app title and creates a sidebar for user input.
+2. User Input for URLs:
+
+Creates text input fields in the sidebar for users to enter up to 3 news article URLs.
+Stores these URLs in a list called urls.
+Provides a button labeled "Process URLs" to trigger data processing.
+3. Data Processing (Triggered by Button Click):
+
+Loads the article data from the provided URLs using UnstructuredURLLoader.
+Splits the loaded data into smaller chunks using RecursiveCharacterTextSplitter.
+Creates vector representations (embeddings) for each chunk using OpenAIEmbeddings.
+Builds a FAISS vectorstore to efficiently search the embeddings.
+Saves the FAISS vectorstore as a pickle file (faiss_store_openai.pkl) for later use.
+4. User Input for Question:
+
+Creates a text input field in the main app window for users to enter their question.
+5. Answering the Question (if a question is provided and the pickle file exists):
+
+Loads the saved FAISS vectorstore from the pickle file.
+Creates a retrieval chain using RetrievalQAWithSourcesChain that combines the OpenAI language model (llm) for answering questions and the FAISS vectorstore for retrieving relevant article snippets.
+Processes the user's question through the retrieval chain and retrieves the answer and source information.
+Displays the answer in a header element.
+If sources are available, it splits them by newline and displays them in a list under a subheader.
+Overall, this code allows users to input news article URLs, process the articles, and then ask questions about the content. The tool uses the OpenAI API and text embeddings to find relevant information and answer the user's questions.
+
+
+"""
 
